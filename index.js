@@ -609,11 +609,14 @@ function loadCraftedLeaves(profile) {
 }
 
 function pretty(str) {
+    try {
     let res = str.replace(/_/g, " ")
     return capitalize(res)
         .replace(/mlc/gi, "MLC")
         .replace(/blc/gi, "BLC")
         .replace(/hp/gi, "HP");
+    }
+    catch { return str; }
 }
 
 const expected_profiles = [
